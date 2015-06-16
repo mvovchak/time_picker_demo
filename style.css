@@ -1,0 +1,137 @@
+body { background-color: #f4f4f4 }
+
+header {
+	z-index: 1;
+	width: 100%;
+	height: 4em;
+	background: #fff;
+}
+
+h4 {
+	margin-top: 0;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.l-logo {
+	margin: 0;
+	padding: 0.5rem 1rem 0 1rem;
+	color: #7bac3f;
+	font-size: 1.3rem;
+	font-weight: 100;
+	text-transform: lowercase;
+	line-height: 3rem;
+	text-align: center;
+}
+
+.l-logo img {
+	width: 150px;
+	vertical-align: top;
+	margin-top: 3px;
+}
+
+.l-sub-header {
+	background-color: #e0e0dc;
+	padding: 1rem 0;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.c-page-header {
+	margin: 0.5rem 0 0 0;
+	padding: 0 1.625em;
+}
+
+.container { margin-bottom: 50px; }
+
+.text-primary { color: #98c221; }
+
+.clockpicker-tick.active,
+.clockpicker-tick:hover { background-color: rgba(152, 194, 33, .25); }
+
+.clockpicker-canvas-bg-trans,
+.clockpicker-canvas-bg { fill: rgba(152, 194, 33, 1); }
+
+.clockpicker-canvas-bearing,
+.clockpicker-canvas-fg { fill: #98c221; }
+
+.clockpicker-canvas line {
+	fill: rgba(152, 194, 33, 1);
+	stroke: rgba(152, 194, 33, 1);
+}
+
+.clockpicker-popover .popover-content { background-color: #efefef; }
+
+.btn-link,
+.btn-link:focus,
+.btn-link:hover { color: #98c221; }
+
+input {
+	outline: 0;
+	box-shadow: none;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus { outline: 0 none; }
+
+.bs-example .form-group,
+.bs-example .form-group input { width: 100%; }
+
+input[type="text"] {
+	padding: 0.625rem;
+	border-radius: 0;
+}
+
+input[type="text"]:focus {
+	outline: 0 !important;
+	box-shadow: none;
+	border: 1px solid #ccc;
+}
+
+.bs-example .btn {
+	color: #98c221;
+	border: none;
+}
+
+.bs-example .btn:hover {
+	background-color: #fff;
+	border: none;
+	box-shadow: none;
+}
+
+.bs-example .btn.btn-primary { color: #000; }
+
+.btn-primary {
+	background-color: #fff;
+}
+
+.btn-primary:hover {
+	background-color: #fff;
+}
+
+.btn-default { border-radius: 0; }
+
+.btn-default,
+.btn-default:hover {
+	background-color: #fff;
+	box-shadow: none;
+}
+
+.bootstrap-timepicker td {
+	min-width: 6px;
+	text-align: center;
+}
+
+.bootstrap-timepicker .btn-default {
+	margin-left: 5px;
+	background-color: #fff;
+	color: #000;
+	-webkit-transition: all .1s ;
+	-moz-transition: all .1s ;
+	-ms-transition: all .1s ;
+	transition: all .1s ;
+}
+
+.bootstrap-timepicker .btn-default:hover {
+	background-color: #a2cf23;
+	color: #fff;
+}

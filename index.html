@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="teesnap">
+<head>
+	<title>Demo Teesnap</title>
+
+	<!-- Clockpicker -->
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/clockpicker/dist/bootstrap-clockpicker.min.css">
+	<!-- Bootstrap Timepicker -->
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+	<!-- Angular Strap -->
+	<link rel="stylesheet" type="text/css" href="bower_components/angular-strap/">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<header>
+		<h1 class="l-logo">
+			<img src="logo.png" alt="Teesnap">
+		</h1>
+	</header>
+
+	<header class="l-sub-header ng-scope">
+		<h3 class="c-page-header l-pull-left">Timepicker</h3>
+	</header>
+
+	<div class="container">
+		<h4>Demo 1</h4>
+		<div class="col-xs-2 col-xs-offset-5">
+			<div class="input-group clockpicker">
+				<input type="text" class="form-control" value="09:30">
+			</div>
+		</div>
+	</div>
+
+	<div class="container bootstrap-timepicker" ng-controller="TimepickerDemoCtrl">
+		<h4>Demo 2</h4>
+		<div class="col-xs-2 col-xs-offset-5">
+			<timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></timepicker>
+		</div>
+	</div>
+
+	<div class="container" ng-controller="AngularStrapController">
+		<h4>Demo 3</h4>
+		<div class="bs-example col-xs-2 col-xs-offset-5" style="padding-bottom: 24px;" append-source>
+			<form name="timepickerForm" class="form-inline" role="form">
+				<div class="form-group" ng-class="{'has-error': timepickerForm.time.$invalid}">
+				 <input type="text" class="form-control" size="8" ng-model="time" name="time" data-length="1" data-minute-step="1" data-arrow-behavior="picker" data-time-format="hh:mm a" bs-timepicker>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="container" ng-controller="AngularStrapController">
+		<h4>Demo 4</h4>
+		<div class="bs-example col-xs-2 col-xs-offset-5" style="padding-bottom: 24px;" append-source>
+			<form name="timepickerForm" class="form-inline" role="form">
+				<div class="form-group" ng-class="{'has-error': timepickerForm.time.$invalid}">
+				 <input type="text" class="form-control" size="8" ng-model="time" name="time" data-minute-step="1" data-arrow-behavior="picker" data-time-format="hh:mm a" bs-timepicker>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+	<!-- Clockpicker -->
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/clockpicker/dist/bootstrap-clockpicker.min.js"></script>
+	<!-- Bootstrap Timepicker -->
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<!-- Angular Strap -->
+	<script src="http://cdn.jsdelivr.net/angularjs/1.3.15/angular-animate.min.js" data-semver="1.3.15"></script>
+	<script src="http://cdn.jsdelivr.net/angularjs/1.3.15/angular-sanitize.min.js" data-semver="1.3.15"></script>
+	<script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+	<script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+
+	<script>
+		$(".clockpicker").clockpicker({
+			donetext: "Done"
+		});
+
+		angular.module("teesnap", ["ui.bootstrap", "ngAnimate", "ngSanitize", "mgcrea.ngStrap"])
+			.controller("TimepickerDemoCtrl", function ($scope, $log) {
+				$scope.mytime = new Date();
+				$scope.hstep = 1;
+				$scope.mstep = 1;
+				$scope.ismeridian = true;
+			})
+			.controller("AngularStrapController", function($scope, $http) {
+				$scope.time = new Date(1970, 0, 1, 10, 30, 40);
+			});
+	</script>
+
+</body>
+</html>

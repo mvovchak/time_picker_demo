@@ -1,0 +1,12 @@
+{
+	"name": "Teesnap Demo",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"angular": "v1.3.16 ",
+		"bootstrap": "v3.3.4",
+		"clockpicker": "v0.0.7 ",
+		"angular-bootstrap": "0.13.0",
+		"angular-strap": "v2.2.2"
+	}
+}
