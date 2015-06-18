@@ -143,11 +143,15 @@
 			//         self.amOrPm = "PM";
 			//        $('.clockpicker-span-am-pm').empty().append('PM');
 			//    });
-	
+			function toggleAmPmStyle() {
+				$('.clockpicker-button').removeClass('active');
+				$(this).addClass('active');
+			}
 			$('<button type="button" class="btn btn-sm btn-default clockpicker-button am-button">' + "AM" + '</button>')
 				.on("click", function() {
 					self.amOrPm = "AM";
 					$('.clockpicker-span-am-pm').empty().append('AM');
+					toggleAmPmStyle.call(this);
 				}).appendTo(this.amPmBlock);
 				
 				
@@ -155,6 +159,7 @@
 				.on("click", function() {
 					 self.amOrPm = "PM";
 					$('.clockpicker-span-am-pm').empty().append('PM');
+					toggleAmPmStyle.call(this);
 				}).appendTo(this.amPmBlock);
 				
 		}
@@ -472,6 +477,9 @@
 
 		this.isShown = true;
 
+		if (this.options.twelvehour) {
+			$(this.amOrPm === 'AM' ? '.am-button' : '.pm-button').trigger('click');
+		}
 		// Hide when clicking or tabbing on any element except the clock, input and addon
 		$doc.on('click.clockpicker.' + this.id + ' focusin.clockpicker.' + this.id, function(e){
 			var target = $(e.target);
