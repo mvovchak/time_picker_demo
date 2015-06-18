@@ -453,11 +453,17 @@
 				now.getMinutes()
 			];
 		}
+
 		this.hours = + value[0] || 0;
-		this.minutes = + value[1] || 0;
+		if (this.options.twelvehour) {
+			this.minutes = + value[1].substring(0,2);
+			this.amOrPm = value[1].substring(2);
+		} else {
+			this.minutes = + value[1] || 0;
+		}
 		this.spanHours.html(leadingZero(this.hours));
 		this.spanMinutes.html(leadingZero(this.minutes));
-
+		this.spanAmPm.html(this.amOrPm);
 		// Toggle to hours view
 		this.toggleView('hours');
 
