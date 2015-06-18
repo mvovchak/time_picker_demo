@@ -9,7 +9,6 @@
 	<!-- Bootstrap Timepicker -->
 	<link rel="stylesheet" type="text/css" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
 	<!-- Angular Strap -->
-	<link rel="stylesheet" type="text/css" href="bower_components/angular-strap/">
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -28,7 +27,10 @@
 		<h4>Demo 1</h4>
 		<div class="col-xs-2 col-xs-offset-5">
 			<div class="input-group clockpicker">
-				<input type="text" class="form-control" value="09:30">
+				<input type="text" class="form-control" value="09:30" id="clockpickerInput">
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-time"></span>
+				</span>
 			</div>
 		</div>
 	</div>
@@ -81,6 +83,8 @@
 			donetext: "Done",
 			twelvehour: true
 		});
+
+		$("#clockpickerInput").unbind("focus.clockpicker click.clockpicker");
 
 		angular.module("teesnap", ["ui.bootstrap", "ngAnimate", "ngSanitize", "mgcrea.ngStrap"])
 			.controller("TimepickerDemoCtrl", function ($scope, $log) {
